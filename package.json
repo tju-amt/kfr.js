@@ -1,0 +1,27 @@
+{
+  "name": "kfr.js",
+  "version": "0.0.0",
+  "description": "wrap kfr by wasm",
+  "main": "index.js",
+  "scripts": {
+    "fetch-kfr": "node script/clean.js && git clone https://github.com/kfrlib/kfr.git lib/kfr",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tju-amt/kfr.js.git"
+  },
+  "keywords": [
+    "kfr",
+    "dsp",
+    "fft",
+    "browser",
+    "fir"
+  ],
+  "author": "ChaosLee",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/tju-amt/kfr.js/issues"
+  },
+  "homepage": "https://github.com/tju-amt/kfr.js#readme"
+}
