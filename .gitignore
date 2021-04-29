@@ -107,3 +107,9 @@ dist
 
 # KFR clone path
 /lib/kfr
+
+# JS module
+/lib/module.html
+/lib/module.js
+/lib/module.wasm
+/lib/build

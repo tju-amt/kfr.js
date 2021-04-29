@@ -1,51 +1,38 @@
-/**
- * KFR (http://kfrlib.com)
- * Copyright (C) 2016  D Levin
- * See LICENSE.txt for details
- */
+// #include <kfr/base.hpp>
+// #include <kfr/dft.hpp>
+// #include <kfr/dsp.hpp>
+#include <emscripten/emscripten.h>
+#include <stdio.h>
+#include "kfrs/kfr_capi.h"
 
-#include <kfr/base.hpp>
-#include <kfr/dft.hpp>
-#include <kfr/dsp.hpp>
-#include <kfr/io.hpp>
+int main() {
+	kfr_f64 a[7] = {0.f, 0.25f, -0.25f, 0.5f, -0.5f, 1.f, -1.f};
 
-using namespace kfr;
 
-int main()
-{
-    println(library_version());
+	printf("hello");
+	printf("%f", a[1]);
+	kfr_filter_create_fir_plan_f64(a, 40);
 
-    // fft size
-    const size_t size = 128;
-
-    // initialize input & output buffers
-    univector<complex<fbase>, size> in  = sin(linspace(0.0, c_pi<fbase, 2> * 4.0, size));
-    univector<complex<fbase>, size> out = scalar(qnan);
-
-    // initialize fft
-    const dft_plan<fbase> dft(size);
-
-    dft.dump();
-
-    // allocate work buffer for fft (if needed)
-    univector<u8> temp(dft.temp_size);
-
-    // perform forward fft
-    dft.execute(out, in, temp);
-
-    // scale output
-    out = out / size;
-
-    // get magnitude and convert to decibels
-    univector<fbase, size> dB = amp_to_dB(cabs(out));
-
-    println("max  = ", maxof(dB));
-    println("min  = ", minof(dB));
-    println("mean = ", mean(dB));
-    println("rms  = ", rms(dB));
-
-    println(in);
-    println();
-    println(dB);
-    return 0;
+	return 0;
 }
+
+// extern "C" {
+	// double math_hyperbolic_cosh(double x);
+	// double math_hyperbolic_coshsinh(double x);
+	// double math_hyperbolic_coth(double x);
+	// double math_hyperbolic_sinh(double x);
+	// double math_hyperbolic_sinhcosh(double x);
+	// double math_hyperbolic_tanh(double x);
+	// KFR_API_SPEC KFR_FILTER_F64* kfr_filter_create_fir_plan_f64(const kfr_f64* taps, size_t size);
+// }
+
+// EMSCRIPTEN_KEEPALIVE
+// double math_hyperbolic_cosh(double x) {
+// 	return x * 0.554;
+// }
+
+// EMSCRIPTEN_KEEPALIVE
+// double m_kfr_filter_create_fir_plan_f64(double x) {
+// 	return kfr_filter_create_fir_plan_f64(x);
+// }
+

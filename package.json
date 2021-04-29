@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/tju-amt/kfr.js/issues"
   },
-  "homepage": "https://github.com/tju-amt/kfr.js#readme"
+  "homepage": "https://github.com/tju-amt/kfr.js#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "mocha": "^8.3.2"
+  }
 }
