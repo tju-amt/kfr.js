@@ -1,0 +1,13 @@
+{
+  "packages": [
+    "packages/math",
+    "packages/kfr"
+  ],
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "registry": "https://registry.npmjs.org/"
+    }
+  },
+  "version": "independent"
+}

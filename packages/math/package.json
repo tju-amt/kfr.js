@@ -1,0 +1,23 @@
+{
+  "name": "@kfr.js/math",
+  "version": "0.0.0",
+  "description": "",
+  "author": "ChaosLee <chaos2lee@qq.com>",
+  "homepage": "https://github.com/tju-amt/kfr.js#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tju-amt/kfr.js.git"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "bugs": {
+    "url": "https://github.com/tju-amt/kfr.js/issues"
+  }
+}
